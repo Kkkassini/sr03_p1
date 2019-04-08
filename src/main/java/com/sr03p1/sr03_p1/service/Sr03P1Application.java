@@ -1,4 +1,4 @@
-package com.sr03p1.sr03_p1;
+package com.sr03p1.sr03_p1.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

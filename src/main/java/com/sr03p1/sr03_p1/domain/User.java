@@ -1,8 +1,9 @@
-package com.sr03p1.sr03_p1.model.entity;
+package com.sr03p1.sr03_p1.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
+import java.util.Objects;
 
 @Entity
 @Table(name="USER")
@@ -117,6 +118,19 @@ public class User {
     public Boolean isActive() {
         if(status == 0) {return Boolean.FALSE;}
         else {return Boolean.TRUE;}
+    }
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User myUser = (User) o;
+        return Objects.equals(mail, myUser.mail) &&
+                Objects.equals(name, myUser.name) &&
+                Objects.equals(creationDate, myUser.creationDate) &&
+                Objects.equals(isAdmin, myUser.isAdmin);
     }
 
     @Override
