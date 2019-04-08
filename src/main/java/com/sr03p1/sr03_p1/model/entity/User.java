@@ -12,19 +12,21 @@ public class User {
 
     private String mail;
     private String name;
+    private String password;
     private String company;
     private String phone;
-    private Date creationDate;
-    private Integer status;
-    private Integer isAdmin;
+    private String creationDate;
+    private int status;
+    private int isAdmin;
 
     public User() {}
 
     // classe publique
 
-    public User(String mail, String name, String company, String phone, Date creationDate, Integer status, Integer isAdmin) {
+    public User(String mail, String name, String password, String company, String phone, String creationDate, int status, int isAdmin) {
         this.mail = mail;
         this.name = name;
+        this.password = password;
         this.company = company;
         this.phone = phone;
         this.creationDate = creationDate;
@@ -41,6 +43,10 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+    
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public void setCompany(String company) {
         this.company = company;
@@ -50,15 +56,15 @@ public class User {
         this.phone = phone;
     }
 
-    public void setCreationDate(Date creationDate) {
+    public void setCreationDate(String creationDate) {
         this.creationDate = creationDate;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
-    public void setIsAdmin(Integer isAdmin) {
+    public void setIsAdmin(int isAdmin) {
         this.isAdmin = isAdmin;
     }
 
@@ -69,12 +75,19 @@ public class User {
     public String getMail() {
         return mail;
     }
-
+    
     @Basic
     @NotNull
     @Column(name = "NAME")
     public String getName() {
         return name;
+    }
+    
+    @Basic
+    @NotNull
+    @Column(name = "PASSWORD")
+    public String getPassword() {
+        return password;
     }
 
     @Basic
@@ -94,21 +107,21 @@ public class User {
     @Basic
     @NotNull
     @Column(name = "CREATION_DATE")
-    public Date getCreationDate() {
+    public String getCreationDate() {
         return creationDate;
     }
 
     @Basic
     @NotNull
     @Column(name = "STATUS")
-    public Integer getStatus() {
+    public int getStatus() {
         return status;
     }
 
     @Basic
     @NotNull
     @Column(name = "IS_ADMIN")
-    public Integer getIsAdmin() {
+    public int getIsAdmin() {
         return isAdmin;
     }
 

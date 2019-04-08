@@ -22,7 +22,7 @@ public class CreateUser extends HttpServlet {
     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        usersTable.put(usersTable.size(), new User(request.getParameter("User mail"),request.getParameter("User name"),request.getParameter("User password"), request.getParameter("User company"),request.getParameter("User phone"), request.getParameter("User creation date"), request.getParameter("User status"), request.getParameter("User Admin")));
+        usersTable.put(usersTable.size(), new User(request.getParameter("User mail"),request.getParameter("User name"),request.getParameter("User password"), request.getParameter("User company"),request.getParameter("User phone"), request.getParameter("User creation date"), Integer.parseInt(request.getParameter("User status")), Integer.parseInt(request.getParameter("User Admin"))));
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
