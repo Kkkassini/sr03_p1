@@ -25,7 +25,7 @@ public class Question {
         this.status = status;
     }
 
-    // fonction set
+    //fonction set
 
     public void setId(Integer id) {
         this.id = id;
