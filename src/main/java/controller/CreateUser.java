@@ -7,12 +7,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Hashtable;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.sr03p1.sr03_p1.model.entity.User;
+import com.sr03p1.sr03_p1.model.User;
 
 public class CreateUser extends HttpServlet {
     private static Hashtable<Integer, User> usersTable= new Hashtable<Integer, User>();
@@ -33,7 +32,7 @@ public class CreateUser extends HttpServlet {
         try{
             Connection connexion = DriverManager.getConnection("jdbc:mysql://127.0.0.1:8889/sr03","root" , "aptx4969");
             Statement st = connexion.createStatement();
-            int result = st.executeUpdate("insert into sr03.USER (mail, password, name, company, phone, creationDate, isAdmin, isActive)" + "values ('"+u.getMail()+"','"+u.getPassword()+"','"+u.getName()+"','"+u.getCompany()+"','"+u.getPhone()+"','"+u.getCreationDate()+"','"+u.getIsAdmin()+"','"+u.getStatus()+")");
+            int result = st.executeUpdate("insert into sr03.USER (mail, password, name, company, phone, creationDate, isAdmin, isActive)" + "values ('"+u.getMail()+"','"+u.getPassword()+"','"+u.getName()+"','"+u.getCompany()+"','"+u.getPhone()+"','"+u.getCreationDate()+"','"+u.getIsAdmin()+"','"+u.getIsActive()+")");
         } catch (SQLException e) {
             e.printStackTrace();
         }

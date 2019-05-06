@@ -1,4 +1,4 @@
-package com.sr03p1.sr03_p1.model.entity;
+package com.sr03p1.sr03_p1.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
